@@ -27,7 +27,7 @@ Jika anda menggunakan IDE yang lain, silahkan lihat "cara untuk import Java Ecli
 License
 ----
 
-* Muhammad Furqan ( 1308107010039 ) - Jurusan Informatika, Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Syiah Kuala.
+* Muhammad Furqan ( 1308107010039 ) - [Jurusan Informatika][inf], [Fakultas Matematika dan Ilmu Pengetahuan Alam][fmipa], [Universitas Syiah Kuala][usk].
 
 Anda diizinkan untuk mengembangkan serta menggunakan source code yang ada pada aplikasi - aplikasi disini. Tetapi kami sangat berharap untuk tidak menghilangkan nama kami selaku orang yang mengembangkan semua aplikasi yang ada disini dari awal.
 
@@ -49,3 +49,7 @@ Anda diizinkan untuk mengembangkan serta menggunakan source code yang ada pada a
    [facebook]: <https://www.facebook.com/furqan.muslim>
    [ig]: <https://instagram.com/muhammadfurqan39/>
 
+   [inf]: <http://informatika.unsyiah.ac.id>
+   [fmipa]: <http://fmipa.unsyiah.ac.id/>
+   [usk]: <http://unsyiah.ac.id>
+   
