@@ -1,0 +1,18 @@
+package com.portalbisnisbersama;
+
+import java.io.BufferedReader;
+
+public class BacaFile {
+	BufferedReader baca;
+	String path;
+	
+	public BacaFile() {
+		// TODO Auto-generated constructor stub
+		baca = null;
+	}
+	
+	public void setPath(String path)
+	{
+		this.path = path;
+	}
+}

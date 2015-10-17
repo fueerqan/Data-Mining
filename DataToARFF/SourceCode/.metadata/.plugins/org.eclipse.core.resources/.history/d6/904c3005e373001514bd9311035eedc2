@@ -1,0 +1,56 @@
+package com.portalbisnisbersama;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+import javax.swing.JOptionPane;
+
+public class BacaFile {
+	BufferedReader baca;
+	String path;
+	
+	public BacaFile() {
+		// TODO Auto-generated constructor stub
+		baca = null;
+	}
+	
+	public void setPath(String path)
+	{
+		this.path = path;
+	}
+	
+	public void buka()
+	{
+		try{
+			baca = new BufferedReader(new FileReader(path));
+		}catch (IOException e) {
+			// TODO: handle exception
+			JOptionPane.showMessageDialog(null, "File data tidak bisa dibuka");
+		}
+	}
+	
+	public String lanjut(String urutan)
+	{
+		try{
+			String kataBalikin;
+			String hasilBaca = baca.readLine().toString();
+			String[] bagi = hasilBaca.split(",");
+			String[] urut = urutan.split(",");
+			
+		}catch(IOException e)
+		{
+			
+		}
+		return "";
+	}
+	
+	public void tutup()
+	{
+		try{
+			baca.close();
+		}catch (IOException e) {
+			// TODO: handle exception
+		}
+	}
+}

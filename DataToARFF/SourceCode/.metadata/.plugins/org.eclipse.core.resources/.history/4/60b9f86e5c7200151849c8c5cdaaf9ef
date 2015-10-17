@@ -1,0 +1,87 @@
+package com.portalbisnisbersama;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class Main {
+	JFrame frame;
+	JButton pilihFile;
+	JButton next;
+	JTextArea textDesc;
+	JLabel textLokasi;
+	JLabel textTitle = new JLabel("DataToARFF - Muhammad Furqan");
+	
+	public static void main(String[] args) {
+		Main utama = new Main();
+	}
+	
+	public Main() {
+		// TODO Auto-generated constructor stub
+		buatFrame();
+	}
+	
+	private void buatFrame()
+	{
+		frame = new JFrame("DataToARFFWeka - Muhammad Furqan");
+		frame.setSize(500, 300);
+		frame.setLocationRelativeTo(null);
+		
+		buatKomponen();
+		isiDesc();
+		
+		frame.setVisible(true);
+	}
+	
+	private void buatKomponen()
+	{
+		textLokasi = new JLabel("");
+		textDesc = new JTextArea("");
+		pilihFile = new JButton("Pilih File Names");
+		next = new JButton("Lanjut");
+
+		/*Title aplikasi*/
+		JPanel panel1 = new JPanel();
+		panel1.add(textTitle);
+		
+		/*Deskripsi langkah*/
+		JPanel panel2 = new JPanel();
+		panel2.setLayout(null);
+		panel2.add(textDesc);
+		textDesc.setBounds(10, 10, 350, 110);
+		
+		panel2.add(textLokasi);
+		textLokasi.setBounds(10, 120, 350, 100);
+		
+		/*Lainnya*/
+		JPanel panel3 = new JPanel();
+		panel3.setLayout(new GridLayout(2,1));
+		
+		panel3.add(pilihFile);
+		panel3.add(next);
+
+		/*Laman Aplikasi*/
+		JPanel panel = (JPanel) frame.getContentPane();
+		panel.setLayout(new BorderLayout());
+				
+		panel.add(panel1, BorderLayout.NORTH);
+		panel.add(panel2, BorderLayout.CENTER);
+		panel.add(panel3, BorderLayout.EAST);
+	}
+	
+	private void isiDesc()
+	{
+		String kata;
+		kata = "SELAMAT DATANG ...\n\nSilahkan pilih file yang berekstensi .names untuk melihat atribut yang akan anda gunakan dalam data anda.\nSetelah itu klik Lanjut.";
+		textDesc.setText(kata);
+		textDesc.setLineWrap(true);
+		textDesc.setBackground(null);
+		textDesc.setFocusable(false);
+	}
+}

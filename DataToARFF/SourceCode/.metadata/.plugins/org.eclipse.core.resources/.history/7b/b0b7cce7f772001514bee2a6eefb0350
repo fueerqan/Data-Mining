@@ -1,0 +1,139 @@
+package com.portalbisnisbersama;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+
+public class HasilConvert {
+	
+	JFrame frame;
+	String path, attribut, judul;
+	JLabel lblbaris = new JLabel("Jumlah baris : ");
+	JLabel lblJlhBaris = new JLabel();
+	JLabel lblTitle = new JLabel("DataToARFF - Muhammad Furqan");
+	JButton btnConvert = new JButton("Konversikan");
+	int baris = 0;
+	Timer time;
+	
+	/**
+	 * Constructor class HasilConvert
+	 */
+	public HasilConvert() {
+		// TODO Auto-generated constructor stub
+		
+		buatFrame();
+	}
+	
+	/**
+	 * Fungsi yang berhubungan dengan frame dan komponennya
+	 */
+	private void buatFrame()
+	{
+		frame = new JFrame("DataToARFF - Muhammad Furqan");
+		frame.setSize(200, 200);
+		frame.setLocationRelativeTo(null);
+		
+		komponen();
+		
+		frame.setVisible(true);
+	}
+	
+	/**
+	 * Fungsi yang berhubungan dengan komponen dalam frame
+	 */
+	private void komponen()
+	{
+		JPanel panel1 = new JPanel();
+		panel1.setLayout(new GridLayout(1, 2));
+		
+		panel1.add(lblbaris);
+		panel1.add(lblJlhBaris);
+		
+		/*JPanel utama*/
+		JPanel panel = (JPanel) frame.getContentPane();
+		panel.setLayout(new BorderLayout());
+		
+		panel.add(lblTitle, BorderLayout.NORTH);
+		panel.add(panel1, BorderLayout.CENTER);
+		panel.add(btnConvert, BorderLayout.SOUTH);
+	}
+	
+	/**
+	 * Fungsi untuk mengisi path file data
+	 * 
+	 * @param path
+	 */
+	public void setPath(String path)
+	{
+		this.path = path;
+	}
+	
+	/**
+	 * Fungsi untuk mengisi attribut dari data
+	 * @param attr
+	 */
+	public void setAttr(String attr)
+	{
+		this.attribut = attr;
+	}
+	
+	/**
+	 * Fungsi untuk mengisi judul dari data
+	 * @param judul
+	 */
+	public void setJudul(String judul)
+	{
+		this.judul = judul;
+	}
+	
+	/**
+	 * Fungsi untuk menghitung baris dari file yang telah di pilih oleh user
+	 */
+	public void hitungBaris()
+	{
+		BufferedReader baca = null;
+		try{
+			baca = new BufferedReader(new FileReader(path));
+		}catch(FileNotFoundException e){
+			JOptionPane.showMessageDialog(frame, "File tidak bisa dibuka");			
+		}
+			
+		ActionListener bacaBaris = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				try{
+					if(baca.readLine() != null)
+					{
+						baris++;
+						lblJlhBaris.setText(Integer.toString(baris));
+					}
+					else
+					{
+						baca.close();
+						time.stop();
+					}
+				}catch(IOException error)
+				{
+
+				}finally{
+					
+				}
+			}
+		};
+	}
+}
