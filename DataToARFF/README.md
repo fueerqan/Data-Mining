@@ -35,6 +35,8 @@ Cara penggunaan yang lengkap bisa langsung anda lihat pada file [DataToARFF-Inst
 * Tunggu sejenak ....
 * Selesai.
 
+[Video Tutorial Cara Penggunaan][video]
+
 
 License
 ----
@@ -68,3 +70,4 @@ Anda diizinkan untuk mengembangkan serta menggunakan source code yang ada pada a
    [fmipa]: <http://fmipa.unsyiah.ac.id/>
    [usk]: <http://unsyiah.ac.id>
    
+   [video]: <https://www.youtube.com/watch?v=85ue3X5ZOHQ>
